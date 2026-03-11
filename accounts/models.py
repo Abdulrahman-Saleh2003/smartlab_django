@@ -87,6 +87,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     is_active = models.BooleanField(_("نشط"), default=True)
     is_staff = models.BooleanField(_("عضو في الإدارة"), default=False)
+    password_reset_code = models.CharField(max_length=6, blank=True, null=True)
+    password_reset_code_expiry = models.DateTimeField(blank=True, null=True)
+    # reset_password_token = models.CharField(max_length=50 , default="" , blank=True)
+    # reset_password_expire = models.DateTimeField(null=True , blank=True)
 
     objects = CustomUserManager()
 

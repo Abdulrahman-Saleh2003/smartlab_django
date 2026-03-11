@@ -62,10 +62,23 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'rest_framework_simplejwt',
-    
+
     'django_filters',
-    "accounts"
-    
+    "accounts",
+    "reports",
+    'doctors',
+    'patients',
+    'doctor_notes',
+    'ai_analysis',
+    'health_alerts',
+    'report_sharing',
+    'lab_tests',
+    'interpretations',
+    'test_results',
+    'patient_test_history',
+    'lab_reports',
+    'test_comparisons',
+    'report_images',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -128,9 +141,12 @@ REST_FRAMEWORK = {
 
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=150),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=45),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+    'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
+    'UPDATE_LAST_LOGIN': True,
+    
     'AUTH_HEADER_TYPES': ('Bearer',),
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
 }
