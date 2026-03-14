@@ -39,6 +39,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         ('doctor', 'طبيب'),
         ('admin', 'إداري'),
         ('receptionist', 'استقبال'),
+        ('lab_technician', 'مخبري'),   # ← أضف هذا السطر
     )
 
     GENDER_CHOICES = (
@@ -60,7 +61,27 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         db_index=True,
     )
     
+    
+    
     name = models.CharField(_("الاسم الكامل"), max_length=255)
+    
+    
+    national_id = models.CharField(
+        _("الرقم الوطني"),
+        max_length=15,
+        blank=True,  # اختياري حاليًا، لو بدك إلزامي غيّر لـ blank=False
+        null=True,
+        unique=True,  # ← مهم: ما يتكرر
+        help_text="رقم وطني مكون من 11 إلى 15 رقم"
+    )
+
+    random_code = models.CharField(
+        _("كود عشوائي"),
+        max_length=10,
+        blank=True,
+        editable=False,  # ما يتعدل يدويًا
+        help_text="كود 10 أرقام يُولد تلقائيًا"
+    )
     
     role = models.CharField(
         _("الدور"),
@@ -73,13 +94,21 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         _("الجنس"),
         max_length=10,
         choices=GENDER_CHOICES,
-        blank=True,
-        null=True
+        blank=False,   # ← غيّر هون إلى False (إلزامي)
+        null=False     # ← غيّر هون إلى False
+        # blank=True,
+        # null=True
     )
     
     birth_date = models.DateField(_("تاريخ الميلاد"), blank=True, null=True)
     
-    phone = models.CharField(_("رقم الهاتف"), max_length=20, blank=True)
+    phone = models.CharField(_("رقم الهاتف"), max_length=20, 
+                             
+                             blank=False,   # ← غيّر هون إلى False (إلزامي)
+        null=False     # ← غيّر هون إلى False
+                          
+                            #  blank=True
+                             )
     
     created_at = models.DateTimeField(_("تاريخ الإنشاء"), default=timezone.now)
     
@@ -89,9 +118,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(_("عضو في الإدارة"), default=False)
     password_reset_code = models.CharField(max_length=6, blank=True, null=True)
     password_reset_code_expiry = models.DateTimeField(blank=True, null=True)
-    # reset_password_token = models.CharField(max_length=50 , default="" , blank=True)
-    # reset_password_expire = models.DateTimeField(null=True , blank=True)
-
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'email'

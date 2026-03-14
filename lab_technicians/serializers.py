@@ -1,74 +1,49 @@
-# patients/serializers.py
-
-import random
-
+# lab_technicians/serializers.py
 from rest_framework import serializers
-from .models import Patient
+from .models import LabTechnician
 from accounts.serializers import UserSerializer
 from accounts.models import CustomUser
+import random
 
 
-
-class PatientSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)  # عرض بيانات المستخدم (الاسم، الإيميل...)
-
-    bmi = serializers.ReadOnlyField()  # خاصية محسوبة (مؤشر كتلة الجسم)
+class LabTechnicianSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
 
     class Meta:
-        model = Patient
+        model = LabTechnician
         fields = [
-            'patient_id',
+            'technician_id',
             'user',
-            'blood_type',
-            'chronic_diseases',
-            'allergies',
-            'height',
-            'bmi',
+            'lab_specialty',
+            'license_number',
+            'years_of_experience',
+            'lab_location',  # ← أضف هنا
             'created_at',
+            
             'updated_at',
         ]
-        read_only_fields = [
-            'patient_id',
-            'created_at',
-            'updated_at',
-            'bmi',
-        ]
+        read_only_fields = ['technician_id', 'created_at', 'updated_at']
 
-    def validate_height(self, value):
-        if value is not None and (value <= 0 or value > 300):
-            raise serializers.ValidationError("الطول يجب أن يكون بين 0 و 300 سم")
-        return value
 
-    def validate_weight(self, value):
-        if value is not None and (value <= 0 or value > 500):
-            raise serializers.ValidationError("الوزن يجب أن يكون بين 0 و 500 كجم")
-        return value
-        
-       
-class PatientRegisterSerializer(serializers.Serializer):
+class LabTechnicianRegisterSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(write_only=True, min_length=8)
     password2 = serializers.CharField(write_only=True, label="تأكيد كلمة المرور")
     name = serializers.CharField(max_length=255)
+    lab_location = serializers.CharField(max_length=255, required=False, allow_blank=True)  # ← أضف هنا
     gender = serializers.ChoiceField(choices=CustomUser.GENDER_CHOICES, required=False)
     birth_date = serializers.DateField(required=False)
     phone = serializers.CharField(max_length=20, required=False)
-    national_id = serializers.CharField(max_length=15, required=True)  # ← إضافة جديدة
+    national_id = serializers.CharField(max_length=15, required=True)
 
-    # حقول خاصة بالمريض
-    blood_type = serializers.ChoiceField(choices=Patient.BLOOD_TYPE_CHOICES, default='unknown')
-    chronic_diseases = serializers.CharField(required=False, allow_blank=True)
-    allergies = serializers.CharField(required=False, allow_blank=True)
-    height = serializers.FloatField(required=False, min_value=0, max_value=300)
-    weight = serializers.FloatField(required=False, min_value=0, max_value=500)
+    # حقول خاصة بالمخبري (اختيارية)
+    lab_specialty = serializers.CharField(max_length=255, required=False, allow_blank=True)
+    license_number = serializers.CharField(max_length=100, required=False, allow_blank=True)
+    years_of_experience = serializers.IntegerField(required=False)
 
     def validate(self, data):
         if data['password'] != data['password2']:
             raise serializers.ValidationError({"password": "كلمتا المرور غير متطابقتين"})
-
-
-
-
         if not data.get('gender'):
             raise serializers.ValidationError({"gender": "الجنس مطلوب"})
 
@@ -77,7 +52,6 @@ class PatientRegisterSerializer(serializers.Serializer):
             raise serializers.ValidationError({"phone": "رقم الهاتف مطلوب"})
         if not phone.isdigit():
             raise serializers.ValidationError({"phone": "رقم الهاتف يجب أن يكون أرقام فقط"})
-        # validation الرقم الوطني
         national_id = data['national_id']
         if not national_id.isdigit():
             raise serializers.ValidationError({"national_id": "الرقم الوطني يجب أن يكون أرقام فقط"})
@@ -96,34 +70,30 @@ class PatientRegisterSerializer(serializers.Serializer):
     def create(self, validated_data):
         validated_data.pop('password2')
 
-        # توليد كود عشوائي 10 أرقام
         random_code = ''.join(random.choices('0123456789', k=10))
 
-        # إنشاء المستخدم مع كل الحقول
         user = CustomUser.objects.create_user(
             email=validated_data['email'],
             password=validated_data['password'],
             name=validated_data['name'],
-            role='patient',
+            role='lab_technician',
             gender=validated_data.get('gender'),
             birth_date=validated_data.get('birth_date'),
             phone=validated_data.get('phone', ''),
+            
             national_id=validated_data['national_id'],
-            random_code=random_code,  # ← يتولد تلقائيًا ويُحفظ
+            random_code=random_code,
         )
 
-        # تحقق إضافي (حماية)
-        if hasattr(user, 'patient_profile'):
-            raise serializers.ValidationError("بروفايل المريض موجود مسبقًا")
+        if hasattr(user, 'lab_technician_profile'):
+            raise serializers.ValidationError("بروفايل المخبري موجود مسبقًا")
 
-        # إنشاء بروفايل المريض
-        Patient.objects.create(
+        LabTechnician.objects.create(
             user=user,
-            blood_type=validated_data.get('blood_type', 'unknown'),
-            chronic_diseases=validated_data.get('chronic_diseases', ''),
-            allergies=validated_data.get('allergies', ''),
-            height=validated_data.get('height'),
-            weight=validated_data.get('weight'),
+            lab_specialty=validated_data.get('lab_specialty', ''),
+            license_number=validated_data.get('license_number', ''),
+            lab_location=validated_data.get('lab_location', ''),  # ← أضف هنا
+            years_of_experience=validated_data.get('years_of_experience'),
         )
 
         return user

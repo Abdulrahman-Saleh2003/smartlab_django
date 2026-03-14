@@ -79,6 +79,9 @@ INSTALLED_APPS = [
     'lab_reports',
     'test_comparisons',
     'report_images',
+    'receptionists',
+    'lab_technicians',
+    
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
