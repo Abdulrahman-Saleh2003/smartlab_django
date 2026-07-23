@@ -1,0 +1,722 @@
+Folder PATH listing for volume ???? ????? ?????
+Volume serial number is F873-CE4C
+E:.
+|   .env
+|   .gitignore
+|   .gitignore1
+|   db.sqlite3
+|   download_model.py
+|   manage.py
+|   project_structure.txt
+|   README.md
+|   requirements.txt
+|   structure.txt
+|   
++---accounts
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           serializers.cpython-311.pyc
+|           serializers.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---ai_analysis
+|   |   admin.py
+|   |   apps.py
+|   |   lab_analysis.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---data
+|   |       raw_reference_candidates.json
+|   |       reference_ranges_master.json
+|   |       
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           lab_analysis.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---ai_models
+|   |   ocr_service.py
+|   |   t.py
+|   |   
+|   +---lora_weights
+|   |       adapter_config.json
+|   |       adapter_model.safetensors
+|   |       chat_template.jinja
+|   |       preprocessing_config.json
+|   |       processor_config.json
+|   |       README.md
+|   |       tokenizer.json
+|   |       tokenizer_config.json
+|   |       
+|   \---__pycache__
+|           ocr_service.cpython-313.pyc
+|           
++---chatbot
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           __init__.cpython-313.pyc
+|   |           
+|   +---rag_llama
+|   |   |   rag_service.py
+|   |   |   
+|   |   +---data
+|   |   |       CBC-sample-report-with-notes_0.pdf
+|   |   |       NCBI Bookshelf.pdf
+|   |   |       Overview on Ordering and Evaluation of Laboratory Tests - StatPearls - NCBI Bookshelf.pdf
+|   |   |       Oxford_Medical_Handbooks_Drew_Provan_Oxford_Handbook_of_Clinical.pdf
+|   |   |       Sample-Lab-Report-DBTICBM.pdf
+|   |   |       StatPearls - NCBI Bookshelf.pdf
+|   |   |       sterling-accuris-pathology-sample-report-unlocked.pdf
+|   |   |       
+|   |   +---storage
+|   |   |       default__vector_store.json
+|   |   |       docstore.json
+|   |   |       graph_store.json
+|   |   |       image__vector_store.json
+|   |   |       index_store.json
+|   |   |       
+|   |   \---__pycache__
+|   |           rag_service.cpython-313.pyc
+|   |           
+|   +---rag_voiceflow
+|   |   |   voiceflow_service.py
+|   |   |   
+|   |   \---__pycache__
+|   |           voiceflow_service.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-313.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-313.pyc
+|           urls.cpython-313.pyc
+|           views.cpython-313.pyc
+|           __init__.cpython-313.pyc
+|           
++---doctors
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   signals.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           serializers.cpython-311.pyc
+|           serializers.cpython-313.pyc
+|           signals.cpython-311.pyc
+|           signals.cpython-313.pyc
+|           urls.cpython-311.pyc
+|           urls.cpython-313.pyc
+|           views.cpython-311.pyc
+|           views.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---health_alerts
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---interpretations
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---lab_reports
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   permissions.py
+|   |   serializers.py
+|   |   t.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           serializers.cpython-311.pyc
+|           serializers.cpython-313.pyc
+|           urls.cpython-313.pyc
+|           views.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---lab_technicians
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           serializers.cpython-311.pyc
+|           serializers.cpython-313.pyc
+|           urls.cpython-311.pyc
+|           urls.cpython-313.pyc
+|           views.cpython-311.pyc
+|           views.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---lab_tests
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---media
+|   \---lab_reports
+|       \---2026
+|           \---04
+|               \---04
+|                       Screenshot_2025-05-10_220000.png
+|                       Screenshot_2025-05-10_220000_culH39l.png
+|                       Screenshot_2025-05-10_220000_job6Eni.png
+|                       Screenshot_2025-05-10_220000_US9dLrS.png
+|                       Screenshot_2025-05-10_234632.png
+|                       Screenshot_2025-05-10_234632_BCZr3F2.png
+|                       Screenshot_2025-05-10_234632_lIwb48M.png
+|                       Screenshot_2025-05-18_214311.png
+|                       Screenshot_2025-05-18_214311_IGi1awb.png
+|                       Screenshot_2025-05-19_152412.png
+|                       Screenshot_2025-05-19_195703.png
+|                       Screenshot_2025-05-21_230001.png
+|                       
++---patients
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   signals.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           serializers.cpython-311.pyc
+|           serializers.cpython-313.pyc
+|           signals.cpython-311.pyc
+|           signals.cpython-313.pyc
+|           urls.cpython-311.pyc
+|           urls.cpython-313.pyc
+|           views.cpython-311.pyc
+|           views.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---patient_test_history
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---project
+|   |   asgi.py
+|   |   settings.py
+|   |   urls.py
+|   |   wsgi.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           settings.cpython-313.pyc
+|           urls.cpython-313.pyc
+|           wsgi.cpython-313.pyc
+|           __init__.cpython-313.pyc
+|           
++---report_images
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---report_reviews
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           serializers.cpython-311.pyc
+|           serializers.cpython-313.pyc
+|           urls.cpython-311.pyc
+|           urls.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---report_sharing
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---test_comparisons
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---test_results
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   serializers.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-311.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           __init__.cpython-311.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-311.pyc
+|           admin.cpython-313.pyc
+|           apps.cpython-311.pyc
+|           apps.cpython-313.pyc
+|           models.cpython-311.pyc
+|           models.cpython-313.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-313.pyc
+|           
++---utils
+|   |   error_view.py
+|   |   
+|   \---__pycache__
+|           error_view.cpython-311.pyc
+|           error_view.cpython-313.pyc
+|           
+\---Z_Images
+    +---Z_Doctor DashBoard Images
+    |       Screenshot 2026-03-31 143045.png
+    |       Screenshot 2026-03-31 143056.png
+    |       Screenshot 2026-03-31 143349.png
+    |       Screenshot 2026-03-31 143440.png
+    |       Screenshot 2026-03-31 143627.png
+    |       Screenshot 2026-03-31 144115.png
+    |       Screenshot 2026-03-31 144120.png
+    |       Screenshot 2026-03-31 144129.png
+    |       Screenshot 2026-03-31 144136.png
+    |       Screenshot 2026-03-31 144145.png
+    |       Screenshot 2026-03-31 144149.png
+    |       Screenshot 2026-03-31 144155.png
+    |       Screenshot 2026-03-31 144200.png
+    |       Screenshot 2026-03-31 145024.png
+    |       Screenshot 2026-03-31 145029.png
+    |       Screenshot 2026-03-31 145129.png
+    |       Screenshot 2026-03-31 145131.png
+    |       Screenshot 2026-03-31 145223.png
+    |       Screenshot 2026-03-31 145320.png
+    |       Screenshot 2026-03-31 145340.png
+    |       Screenshot 2026-03-31 145346.png
+    |       Screenshot 2026-03-31 145446.png
+    |       Screenshot 2026-03-31 145619.png
+    |       Screenshot 2026-03-31 145621.png
+    |       Screenshot 2026-03-31 145844.png
+    |       Screenshot 2026-03-31 151203.png
+    |       Screenshot 2026-03-31 151212.png
+    |       Screenshot 2026-03-31 160806.png
+    |       Screenshot 2026-03-31 160807.png
+    |       
+    +---Z_Laboratory DashBoard Images
+    |       Screenshot 2026-04-04 102734.png
+    |       Screenshot 2026-04-04 102756.png
+    |       Screenshot 2026-04-04 102807.png
+    |       Screenshot 2026-04-04 102814.png
+    |       Screenshot 2026-04-04 102816.png
+    |       Screenshot 2026-04-04 105426.png
+    |       Screenshot 2026-04-04 105431.png
+    |       Screenshot 2026-04-04 105504.png
+    |       Screenshot 2026-04-04 105506.png
+    |       Screenshot 2026-04-04 105616.png
+    |       Screenshot 2026-04-04 105723.png
+    |       Screenshot 2026-04-04 105728.png
+    |       Screenshot 2026-04-04 110049.png
+    |       Screenshot 2026-04-04 110051.png
+    |       Screenshot 2026-04-04 110105.png
+    |       Screenshot 2026-04-04 110120.png
+    |       Screenshot 2026-04-04 110130.png
+    |       Screenshot 2026-04-04 110138.png
+    |       Screenshot 2026-04-04 110147.png
+    |       Screenshot 2026-04-04 110153.png
+    |       Screenshot 2026-04-04 110426.png
+    |       Screenshot 2026-04-04 110428.png
+    |       Screenshot 2026-04-04 110438.png
+    |       Screenshot 2026-04-04 110521.png
+    |       Screenshot 2026-04-04 111604.png
+    |       Screenshot 2026-04-04 111612.png
+    |       Screenshot 2026-04-04 111617.png
+    |       Screenshot 2026-04-04 111739.png
+    |       Screenshot 2026-04-04 111741.png
+    |       Screenshot 2026-04-04 112049.png
+    |       Screenshot 2026-04-04 112143.png
+    |       Screenshot 2026-04-04 112145.png
+    |       Screenshot 2026-04-04 112148.png
+    |       Screenshot 2026-04-04 112307.png
+    |       Screenshot 2026-04-04 112309.png
+    |       Screenshot 2026-04-04 112335.png
+    |       Screenshot 2026-04-04 112343.png
+    |       Screenshot 2026-04-04 112355.png
+    |       Screenshot 2026-04-04 112524.png
+    |       Screenshot 2026-04-04 112525.png
+    |       Screenshot 2026-04-04 115623.png
+    |       Screenshot 2026-04-04 115637.png
+    |       Screenshot 2026-04-04 115651.png
+    |       Screenshot 2026-04-04 115808.png
+    |       Screenshot 2026-04-04 115809.png
+    |       Screenshot 2026-04-04 115904.png
+    |       Screenshot 2026-04-04 115909.png
+    |       Screenshot 2026-04-04 120127.png
+    |       Screenshot 2026-04-04 120139.png
+    |       Screenshot 2026-04-04 120403.png
+    |       Screenshot 2026-04-04 120405.png
+    |       
+    \---Z_Patint DashBoard Images
+            Screenshot 2026-04-01 083920.png
+            Screenshot 2026-04-01 083931.png
+            Screenshot 2026-04-01 084001.png
+            Screenshot 2026-04-01 084006.png
+            Screenshot 2026-04-01 084020.png
+            Screenshot 2026-04-01 084021.png
+            Screenshot 2026-04-01 084035.png
+            Screenshot 2026-04-01 084041.png
+            Screenshot 2026-04-01 084050.png
+            Screenshot 2026-04-01 084055.png
+            Screenshot 2026-04-01 084120.png
+            Screenshot 2026-04-01 084121.png
+            Screenshot 2026-04-01 084143.png
+            Screenshot 2026-04-01 084150.png
+            Screenshot 2026-04-01 084155.png
+            Screenshot 2026-04-01 084209.png
+            Screenshot 2026-04-01 084211.png
+            Screenshot 2026-04-01 084223.png
+            Screenshot 2026-04-01 084233.png
+            Screenshot 2026-04-01 084240.png
+            Screenshot 2026-04-01 084251.png
+            Screenshot 2026-04-01 084257.png
+            Screenshot 2026-04-01 084258.png
+            Screenshot 2026-04-01 084304.png
+            Screenshot 2026-04-01 084321.png
+            Screenshot 2026-04-01 084328.png
+            Screenshot 2026-04-01 084334.png
+            Screenshot 2026-04-01 084339.png
+            Screenshot 2026-04-01 084809.png
+            Screenshot 2026-04-01 085014.png
+            Screenshot 2026-04-01 085016.png
+            Screenshot 2026-04-01 085030.png
+            

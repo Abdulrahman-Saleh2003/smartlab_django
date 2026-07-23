@@ -1,0 +1,50 @@
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.decouple
+
+# IDE
+.vscode/
+.idea/
+
+# Media & Static (اختياري)
+media/
+staticfiles/
+# ملفات كبيرة
+*.pdf
+*.safetensors
+*.bin
+*.pth
+*.h5
+*.onnx
+
+# مجلدات البيانات الكبيرة
+chatbot/rag_llama/data/
+ai_models/lora_weights/
+ai_analysis/data/
+
+# مجلدات مؤقتة
+__pycache__/
+*.pyc
+storage/
+ai_models/lora_weights/
+*.safetensorsZ_Images/ 
